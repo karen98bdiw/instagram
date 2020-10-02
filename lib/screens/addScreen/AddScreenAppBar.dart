@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CapturePageAppBar extends StatelessWidget with PreferredSizeWidget {
+class AddScreenAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import './widgets/myBottomNavigationBar.dart';
+import 'widgets/MyBottomNavigationBar.dart';
 
 import 'screens/addScreen/AddScreen.dart';
 import 'screens/homeScreen/HomeScreen.dart';
 import 'screens/notesScreen/NoteScreen.dart';
-import 'screens/profileScreen/ProfilePage.dart';
+import 'screens/profileScreen/ProfileScreen.dart';
 import 'screens/searchScreen/SearchScreen.dart';
 
 main() => runApp(MyApp());
@@ -44,13 +44,18 @@ class MyHomeScreen extends StatefulWidget {
 }
 
 class _MyHomeScreenState extends State<MyHomeScreen> {
-  var screens = [
-    HomeScreen(),
-    SearchScreen(),
-    AddScreen(),
-    NotesScreen(),
-    ProfileScreen(),
+  List<Map<String, Object>> screens = [
+    {"screen": HomeScreen(), "appBar": HomeScreen.appBar},
+    {"screen": SearchScreen(), "appBar": SearchScreen.appBar},
+    {"screen": AddScreen(), "appBar": AddScreen.appBar},
+    {"screen": NotesScreen(), "appBar": NotesScreen.appBar},
+    {"screen": ProfileScreen(), "appBar": ProfileScreen.appBar}
   ];
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   var _curentScreenIndex = 0;
 
@@ -63,7 +68,8 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[_curentScreenIndex],
+      appBar: screens[_curentScreenIndex]["appBar"],
+      body: screens[_curentScreenIndex]["screen"],
       bottomNavigationBar:
           MyBottomNavigtionBar(_curentScreenIndex, _onNavItemTapped),
     );

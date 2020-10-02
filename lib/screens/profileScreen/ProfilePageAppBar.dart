@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CapturePageAppBar extends StatelessWidget with PreferredSizeWidget {
+class ProfilePageAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text("Capture"),
+      title: Text("Profile"),
     );
   }
 

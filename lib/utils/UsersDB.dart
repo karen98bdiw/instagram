@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import '../models/User.dart';
 
 class UsersDB {

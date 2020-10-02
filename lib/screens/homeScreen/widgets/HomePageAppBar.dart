@@ -12,7 +12,7 @@ class HomePageAppBar extends StatelessWidget with PreferredSizeWidget {
         onTap: () => print("capture"),
       ),
       actions: [
-        IconButton(icon: Icon(Icons.message), onPressed: () => print("direct"))
+        IconButton(icon: Icon(Icons.send), onPressed: () => print("next"))
       ],
     );
   }
